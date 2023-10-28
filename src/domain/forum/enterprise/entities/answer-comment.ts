@@ -11,6 +11,9 @@ export interface AnswerCommentProps extends CommentProps {
 }
 
 export class AnswerComment extends AggregateRoot<AnswerCommentProps> {
+  createdAt: string | Date | undefined
+  updatedAt: string | Date | null | undefined
+
   get answerId() {
     return this.props.answerId
   }
