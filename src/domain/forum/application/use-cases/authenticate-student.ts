@@ -3,7 +3,7 @@ import { Injectable } from '@nestjs/common'
 import { StudentsRepository } from '../repositories/students-repository'
 import { Encrypter } from '../cryptography/encrypter'
 import { WrongCredentialsError } from './errors/wrong-credentials-error'
-import { HasheComparer } from '../cryptography/hasher'
+import { HashComparer } from '../cryptography/hasher'
 
 interface AuthenticateStudentUseCaseRequest {
   email: string
@@ -21,7 +21,7 @@ type AuthenticateStudentUseCaseResponse = Either<
 export class AuthenticateStudentUseCase {
   constructor(
     private studentsRepository: StudentsRepository,
-    private hashComparer: HasheComparer,
+    private hashComparer: HashComparer,
     private encrypter: Encrypter,
   ) {}
 
